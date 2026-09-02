@@ -3,31 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Qualitative demonstrations for ALTER.">
-    <title>ALTER | Qualitative Demonstrations</title>
+    <meta name="description" content="ALTER: Keeping Vision-Language-Action Control in Step with Real-World Dynamics.">
+    <title>ALTER | Supplementary Material</title>
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+    <header class="topbar"><div class="container topbar-inner"><span class="wordmark">ALTER</span><nav><a href="#abstract">Abstract</a><a href="#real-robot">Real-robot</a><a href="#method">Method</a><a href="#results">Results</a></nav></div></header>
     <main>
-      <section class="hero" aria-labelledby="project-title">
-        <div class="container">
-          <h1 id="project-title">ALTER: Keeping Vision-Language-Action Control in Step with Real-World Dynamics</h1>
-          <p class="authors">Anonymous Authors</p>
-        </div>
-      </section>
-      <section class="demonstrations" aria-labelledby="demonstrations-title">
-        <div class="container">
-          <h2 id="demonstrations-title">Qualitative Demonstrations</h2>
-          <div id="video-grid" class="video-grid" aria-live="polite"></div>
-        </div>
-      </section>
+      <section class="hero container"><p class="kicker">Supplementary Material</p><h1>ALTER: Keeping Vision-Language-Action Control in Step with Real-World Dynamics</h1><p class="authors">Anonymous Authors</p></section>
+      <section id="abstract" class="section abstract-section"><div class="narrow"><p class="label">Abstract</p><p class="abstract-copy">Vision-language-action models enable generalist robotic manipulation, but expensive server inference and action-chunk execution limit closed-loop responsiveness. Existing execution methods leave active chunks unchanged, while many dual-system VLAs rely on model-specific representations and full action regeneration. We present <strong>ALTER</strong>, a server-assisted on-device VLA inference framework in which a pretrained server-side VLA periodically generates an executable action chunk and a compact on-device refinement module refines its execution-aligned segment using the latest observation while retaining the full chunk as longer-horizon context. Completed action chunks provide a model-agnostic interface across heterogeneous VLAs. Across five server-side VLAs and three simulation benchmarks, ALTER outperforms all evaluated baselines and matches or exceeds frequent replanning with <strong>80% fewer server-side VLA invocations</strong>. Across nine real-world dynamic settings, it improves overall success by <strong>70.4 percentage points</strong>, with <strong>7.34–22.36 ms</strong> refinement latency on Jetson devices.</p></div></section>
+      <section id="real-robot" class="section tinted"><div class="container"><div class="section-head"><div><p class="label">01 / Real-world evaluation</p><h2>Real-robot results</h2></div><p class="section-note">Online correction under moving objects, reoriented tools, and newly introduced obstacles.</p></div><div class="robot-layout"><figure class="feature-figure"><img src="assets/images/qualitative.png" alt="Qualitative examples of real-time action correction"><figcaption>Representative corrections during conveyor pick-and-place, stapler grasping, and obstacle-insertion tasks.</figcaption></figure><div class="stat-stack"><div class="stat"><strong>95.1%</strong><span>overall success across 162 trials</span></div><div class="stat"><strong>+70.4 pp</strong><span>over direct action-chunk execution</span></div><div class="stat"><strong>9 settings</strong><span>across three dynamic manipulation tasks</span></div></div></div><div id="video-grid" class="video-grid" aria-label="Real-robot demonstration videos"></div></div></section>
+      <section id="motivation" class="section"><div class="narrow"><p class="label">02 / Motivation</p><h2>When a good plan becomes stale</h2><p class="body-copy">A VLA action chunk carries both immediate motor commands and longer-horizon intent. Server inference is too slow to refresh every control step, yet executing an old chunk ignores observations arriving after generation. ALTER treats the active chunk as an evolving action prior: preserve its intent, and correct only the actions immediately ahead using fresh local context.</p><div class="principles"><div><span>01</span><h3>Fresh observations</h3><p>React to physical changes without waiting for another full VLA query.</p></div><div><span>02</span><h3>Long-horizon intent</h3><p>Keep the remaining chunk as context instead of discarding a useful plan.</p></div><div><span>03</span><h3>Model-agnostic interface</h3><p>Exchange completed action chunks, not model-specific hidden features.</p></div></div></div></section>
+      <section id="method" class="section tinted"><div class="container"><div class="section-head"><div><p class="label">03 / Method overview</p><h2>Server planning, on-device refinement</h2></div><p class="section-note">The edge loop updates the execution-aligned suffix while caching stable multimodal context.</p></div><figure class="wide-figure"><img src="assets/images/overview.png" alt="ALTER system overview"><figcaption>ALTER separates slow server-side generation from fast action-level temporal edge refinement.</figcaption></figure></div></section>
+      <section id="results" class="section"><div class="container"><div class="section-head"><div><p class="label">04 / Main results</p><h2>Performance at a glance</h2></div></div><div class="result-grid"><div class="result-panel"><div class="metric">80<span>%</span></div><h3>fewer server invocations</h3><p>Compared with frequent VLA replanning while matching or exceeding its task performance.</p></div><div class="result-panel"><div class="metric">7.34–22.36<span> ms</span></div><h3>Jetson refinement latency</h3><p>Two-step FP16 TensorRT refinement on Orin Nano, Orin NX, and AGX Orin.</p></div><div class="result-panel"><div class="metric">5</div><h3>server-side VLA backbones</h3><p>One action-level interface supports heterogeneous pretrained policies.</p></div></div><div class="figure-grid"><figure><img src="assets/images/ablation.png" alt="Ablation results"><figcaption>Ablation of core components and training designs.</figcaption></figure><figure><img src="assets/images/latency.png" alt="Latency comparison"><figcaption>Fast-path latency compared with dual-system baselines.</figcaption></figure></div></div></section>
     </main>
-    <dialog id="video-dialog" aria-label="Video player">
-      <button class="close-dialog" type="button" aria-label="Close video">&times;</button>
-      <video id="dialog-video" controls playsinline></video>
-      <p id="dialog-title"></p>
-    </dialog>
-    <script src="assets/js/videos.js"></script>
-    <script src="assets/js/main.js"></script>
+    <footer><div class="container"><span>ALTER</span><span>Anonymous submission</span></div></footer>
+    <dialog id="video-dialog" aria-label="Video player"><button class="close-dialog" type="button" aria-label="Close video">&times;</button><video id="dialog-video" controls playsinline></video><p id="dialog-title"></p></dialog>
+    <script src="assets/js/videos.js"></script><script src="assets/js/main.js"></script>
   </body>
 </html>
