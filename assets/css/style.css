@@ -9,8 +9,7 @@ h1 { max-width: 1120px; margin: 0 auto 21px; font-family: Georgia, "Times New Ro
 .authors { margin: 0; color: var(--accent); font-size: 19px; }
 .demonstrations { padding: 61px 0 90px; }
 h2 { margin-bottom: 8px; font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: 500; line-height: 1.2; text-align: center; letter-spacing: 0; }
-.section-intro { margin-bottom: 40px; color: var(--muted); font-size: 16px; text-align: center; }
-.video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 30px; row-gap: 38px; }
+.video-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; row-gap: 38px; }
 .video-card { position: relative; min-width: 0; }
 .video-card video, .placeholder { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line); background: #1c1c1c; object-fit: cover; }
 .placeholder { display: grid; place-items: center; background: var(--soft); color: #9a9a9a; font-size: 14px; letter-spacing: .07em; text-transform: uppercase; }
@@ -22,4 +21,5 @@ dialog::backdrop { background: rgba(0, 0, 0, .8); }
 #dialog-video { display: block; width: 100%; max-height: 74vh; background: #000; }
 #dialog-title { margin: 0; padding: 15px 52px 17px 18px; font-size: 15px; }
 .close-dialog { position: absolute; top: 8px; right: 8px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .94); color: #1b1b1b; cursor: pointer; font-size: 26px; line-height: 1; }
-@media (max-width: 680px) { .container { width: min(100% - 32px, 1160px); } .hero { padding: 55px 0 48px; } .desktop-break { display: none; } .demonstrations { padding: 45px 0 64px; } h2 { font-size: 29px; } .section-intro { margin-bottom: 29px; } .video-grid { grid-template-columns: 1fr; row-gap: 29px; } }
+@media (max-width: 850px) { .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .container { width: min(100% - 32px, 1160px); } .hero { padding: 55px 0 48px; } .demonstrations { padding: 45px 0 64px; } h2 { font-size: 29px; } .video-grid { grid-template-columns: 1fr; row-gap: 29px; } }

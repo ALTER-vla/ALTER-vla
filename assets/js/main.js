@@ -50,5 +50,5 @@
     dialogVideo.load();
   });
   dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
-  grid.replaceChildren(...window.projectData.videos.slice(0, 6).map(createCard));
+  grid.replaceChildren(...window.projectData.videos.slice(0, 9).map(createCard));
 })();

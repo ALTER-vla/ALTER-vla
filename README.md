@@ -5,8 +5,8 @@ A dependency-free GitHub Pages site for supplementary result videos.
 ## Add videos
 
 1. Copy browser-compatible `MP4` videos into `videos/`.
-2. Replace the six entries in `assets/js/videos.js`, one entry for each video tile. Each entry supports `title`, `src`, and optional `poster`.
-3. Open `index.html` locally to preview. The page displays six videos in a fixed two-column, three-row layout on desktop.
+2. Replace the nine entries in `assets/js/videos.js`, one entry for each video tile. Each entry supports `title`, `src`, and optional `poster`.
+3. Open `index.html` locally to preview. The page displays nine videos in a fixed three-column, three-row layout on desktop.
 
 Keep individual files reasonably small for a responsive reviewer experience. GitHub blocks normal Git pushes for files over 100 MB; compress videos or use Git LFS / an external video host for larger assets.
 
