@@ -3,62 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Supplementary videos for Project Name.">
-    <title>Project Name | Supplementary Videos</title>
+    <meta name="description" content="Qualitative demonstrations for ALTER.">
+    <title>ALTER | Qualitative Demonstrations</title>
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-content">
-        <a class="project-mark" href="#top" aria-label="Project Name home">PN</a>
-        <nav aria-label="Primary navigation">
-          <a href="#results">Results</a>
-          <a href="#citation">Citation</a>
-          <a id="paper-link" href="#" hidden>Paper</a>
-        </nav>
-      </div>
-    </header>
-
-    <main id="top">
-      <section class="intro container">
-        <p class="eyebrow">Supplementary Material</p>
-        <h1 id="project-title">Project Name</h1>
-        <p class="lead" id="project-summary">A concise one-sentence description of the project and its central result.</p>
-        <p class="authors" id="project-authors">Author One, Author Two, Author Three</p>
-        <div class="links">
-          <a id="intro-paper-link" class="button" href="#" hidden>Read the paper <span aria-hidden="true">&rarr;</span></a>
-          <a id="code-link" class="text-link" href="#" hidden>Code</a>
+    <main>
+      <section class="hero" aria-labelledby="project-title">
+        <div class="container">
+          <h1 id="project-title">ALTER: Keeping Vision-Language-Action Control in<br class="desktop-break"> Step with Real-World Dynamics</h1>
+          <p class="authors">Anonymous Authors</p>
         </div>
       </section>
-
-      <section id="results" class="results-section">
+      <section class="demonstrations" aria-labelledby="demonstrations-title">
         <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Qualitative Results</p>
-              <h2>Result Videos</h2>
-            </div>
-            <div id="filters" class="filters" aria-label="Filter videos"></div>
-          </div>
+          <h2 id="demonstrations-title">Qualitative Demonstrations</h2>
+          <p class="section-intro">Videos will be available in the camera-ready version.</p>
           <div id="video-grid" class="video-grid" aria-live="polite"></div>
         </div>
       </section>
-
-      <section id="citation" class="citation container">
-        <p class="eyebrow">Citation</p>
-        <h2>Reference</h2>
-        <pre><code id="citation-text">Add the paper citation in assets/js/videos.js.</code></pre>
-      </section>
     </main>
-
-    <footer>
-      <div class="container"><span id="footer-project">Project Name</span><span>Supplementary videos</span></div>
-    </footer>
-
     <dialog id="video-dialog" aria-label="Video player">
       <button class="close-dialog" type="button" aria-label="Close video">&times;</button>
       <video id="dialog-video" controls playsinline></video>
-      <div class="dialog-caption"><strong id="dialog-title"></strong><span id="dialog-description"></span></div>
+      <p id="dialog-title"></p>
     </dialog>
     <script src="assets/js/videos.js"></script>
     <script src="assets/js/main.js"></script>
