@@ -1,6 +1,5 @@
-/* Replace src values with MP4 paths in videos/ when demonstrations are ready. */
+/* Conveyor pick-and-place comparison. */
 window.projectData = { videos: [
-  { title: "Conveyor pick-and-place", subtitle: "Moving object / moving bowl", src: "", poster: "" },
-  { title: "Stapler grasping", subtitle: "High and low rotations", src: "", poster: "" },
-  { title: "Obstacle-insertion pick-and-place", subtitle: "Obstacle introduced during transfer", src: "", poster: "" },
+  { title: "π0.5", subtitle: "Server-side VLA baseline", src: "videos/pi05-conveyor.mp4", poster: "" },
+  { title: "ALTER", subtitle: "On-device temporal edge refinement", src: "videos/alter-conveyor.mp4", poster: "" },
 ] };
